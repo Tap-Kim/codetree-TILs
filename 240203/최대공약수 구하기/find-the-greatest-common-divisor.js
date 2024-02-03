@@ -1,6 +1,6 @@
-function gcd(a,b) {
-    if(b === 0) return a;
-    return gcd(b, b % a);
+function gcd(a, b) {
+    if(b > 0) return gcd(b, a % b);
+    return a;
 }
 
 const fs = require('fs');
