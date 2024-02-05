@@ -12,8 +12,9 @@ let input = fs.readFileSync(0).toString().trim().split(" ");
 let [a, b] = input.map(Number);
 
 let sum = 0;
-for(let i = a; i <= b; i++) {
-    if(isPrime(i)) sum += i;
+if(!(a === 1 && b === 1)){
+    for(let i = a; i <= b; i++) {
+        if(isPrime(i)) sum += i;
+    }
 }
-
 console.log(sum);
