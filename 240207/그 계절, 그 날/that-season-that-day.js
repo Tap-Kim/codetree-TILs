@@ -15,12 +15,12 @@ function getFourSeaon(year, month, date) {
         return 'Summer';
     } else if(month >= 9 && month <= 11){
         return 'Fall';
-    } else if(month >= 12 || [1, 2].includes(month)){
-        if(isYun(year)) {
-            return date >= 29 ? -1 : 'Winter';
-        } else {
-            return date >= 29 ? -1 : 'Winter';
+    } else if(month === 2){
+        if(isYun(year) && date <= 29) {
+            return 'Winter';
         }
+    } else if(month >= 12 || month === 1){
+        return 'Winter';
     } else {
         return -1;
     }
