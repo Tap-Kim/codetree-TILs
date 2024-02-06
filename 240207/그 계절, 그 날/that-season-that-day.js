@@ -17,9 +17,9 @@ function getFourSeaon(year, month, date) {
         return 'Fall';
     } else if(month >= 12 || [1, 2].includes(month)){
         if(isYun(year)) {
-            return date > 29 ? -1 : 'Winter';
+            return date >= 29 ? -1 : 'Winter';
         } else {
-            return 'Winter';
+            return date >= 29 ? -1 : 'Winter';
         }
     } else {
         return -1;
@@ -30,4 +30,5 @@ const fs = require("fs");
 let input = fs.readFileSync(0).toString().trim().split(" ");
 let [Y,M,D] = input.map(Number);
 
+// console.log(getFourSeaon(Y,M,D));
 console.log(getFourSeaon(Y,M,D));
