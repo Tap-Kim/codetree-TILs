@@ -1,8 +1,9 @@
 const fs = require("fs");
-const [a, operation ,c] = fs.readFileSync(0).toString().trim().split(" ");
+let [_a, operation ,_c] = fs.readFileSync(0).toString().trim().split(" ");
 
 if(['+', '-', '/', '*' ].includes(operation)){
     let result = 0;
+    const a = parseInt(_a), c = parseInt(_c);
     switch(operation){
         case '+': 
             result = a + c;
