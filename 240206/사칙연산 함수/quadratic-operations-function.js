@@ -20,5 +20,5 @@ if(['+', '-', '/', '*' ].includes(operation)){
     }
     console.log(`${a} ${operation} ${c} = ${result}`)
 } else {
-    console.log(False)
+    console.log('False')
 }
