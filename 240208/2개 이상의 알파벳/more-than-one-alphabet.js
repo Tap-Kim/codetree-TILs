@@ -12,10 +12,4 @@ for(let i = 0; i < input.length; i++) {
     }
 }
 
-for(let cnt of map.values()){
-    if(cnt > 1 ) {
-        console.log('Yes')
-        return;
-    }
-}
-console.log('No');
+console.log(map.size > 1 ? 'Yes' : 'No')
