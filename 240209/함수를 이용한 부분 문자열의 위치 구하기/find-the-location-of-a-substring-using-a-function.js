@@ -9,9 +9,10 @@ function getIndex() {
                 cnt++;
                 if(cnt > 1) return i
             }
-        }   
+        }  
+        if(cnt > 0) return i;
     }
-
+    return -1;
 }
 
 console.log(getIndex())
