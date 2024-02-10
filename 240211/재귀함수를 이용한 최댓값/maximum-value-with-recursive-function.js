@@ -1,6 +1,6 @@
 function f(arr) {
-    arr.sort()
-    return arr.at(-1)
+    arr.sort((a,b) => b - a)
+    return arr[0]
 }
 
 const fs = require("fs");
