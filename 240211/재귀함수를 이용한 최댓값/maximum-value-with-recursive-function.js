@@ -6,4 +6,4 @@ function f(arr, n) {
 const fs = require("fs");
 let [n, arr] = fs.readFileSync(0).toString().trim().split("\n");
 
-console.log(f(arr.trim().split(' ').map(Number), n))
+console.log(f(arr.trim().split(' ').map(Number), n - 1))
