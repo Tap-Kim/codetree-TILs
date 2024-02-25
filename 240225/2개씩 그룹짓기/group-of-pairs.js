@@ -1,11 +1,12 @@
 function maxSum(N, arr) {
-    arr.sort()
-    let maxSumList = [];
-    for(let i = 0; i < N; i++) {
-        maxSumList.push(arr[i] + arr[arr.length - 1 - i]);
+    arr.sort((a, b) => a - b);
+
+    let maxSum = 0;
+    for (let i = 0; i < N; i++) {
+        maxSum = Math.max(maxSum, arr[i] + arr[arr.length - 1 - i]);
     }
 
-    return Math.max(...maxSumList)
+    return maxSum;
 }
 
 const fs = require("fs");
