@@ -1,5 +1,5 @@
 class Agent {
-    constructor(grade = 'A', point = 0) {
+    constructor(grade, point) {
         this.grade = grade;
         this.point = point;
     }
@@ -13,7 +13,5 @@ for (let i = 0; i < input.length; i++) {
     let [grade, point] = input[i].split(" ");
     agents[i] = new Agent(grade, Number(point));
 }
-const minPoint = Math.min(...agents.map(a => a.point))
-const min = agents.findIndex((f) => String(minPoint).indexOf(String(f.point)))
-
-console.log(`${agents[min - 1].grade} ${agents[min - 1].point}`)
+const sorted = agents.sort((a,b) => a.point - b.point)
+console.log(`${sorted[0].grade} ${sorted[0].point}`)
