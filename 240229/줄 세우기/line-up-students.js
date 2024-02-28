@@ -2,14 +2,14 @@ const fs = require("fs");
 let [n, ...data] = fs.readFileSync(0).toString().trim().split("\n");
 
 const students = []
-for(let i = 1; i <= n; i++) {
-    const [height, weight] = data[i-1].trim().split(" ")
-    students.push({height: Number(height), weight: Number(weight), num: i})
+for(let i = 0; i < n; i++) {
+    const [height, weight] = data[i].trim().split(" ")
+    students.push({height: Number(height), weight: Number(weight), num: i + 1})
 }
 
 function comp(a,b) {
     if((a.height === b.height) && (a.weight === b.weight)) {
-        return b.num - a.num;
+        return a.num - b.num;
     }
     if((a.height === b.height)) {
         return b.weight - a.weight;
