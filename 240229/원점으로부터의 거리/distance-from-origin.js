@@ -21,11 +21,11 @@ for(let i = 0; i < n; i++) {
 }
 
 function compare(a, b) {
-    const disX = Math.abs(a.x) + Math.abs(b.x);
-    const disY = Math.abs(a.y) + Math.abs(b.y);
+    const disA = Math.abs(a.x) + Math.abs(a.y);
+    const disB = Math.abs(b.x) + Math.abs(b.y);
     
-    if(disX === disY) return a.num - b.num;
-    return disX - disY
+    if(disA === disB) return a.num - b.num;
+    return disA - disB
 }
 
 distinces.sort(compare)
