@@ -7,6 +7,7 @@ const [m1, d1, m2, d2] = fs.readFileSync(0).toString().trim().split(" ").map(Num
 
 if (m1 === m2) {
     console.log(d2 - d1 + 1)
+    return;
 }
 
 let totalDays = NUM_OF_DAYS[m1 - 1] - d1;
