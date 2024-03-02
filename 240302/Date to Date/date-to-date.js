@@ -6,6 +6,11 @@ const fs = require("fs");
 const [m1, d1, m2, d2] = fs.readFileSync(0).toString().trim().split(" ").map(Number);
 
 let daySum = 1;
+if(d1 === d2 && m1 === m2) {
+    console.log(daySum)
+    return;
+}
+
 for(let i = m1; i <= m2; i++) {
     daySum += NUM_OF_DAYS[i - 1];
 }
