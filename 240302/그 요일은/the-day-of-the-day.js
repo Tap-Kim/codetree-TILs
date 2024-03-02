@@ -6,14 +6,6 @@ const fs = require("fs");
 let [dates, _day] = fs.readFileSync(0).toString().trim().split("\n");
 const day = _day.trim()
 const [m1, d1, m2, d2] = dates.trim().split(" ").map(Number);
-// m1, d1 => Mon
-// 2월 5일 => Mon
-
-// if (m1 === m2) {
-//     console.log(d2 - d1 + 1)
-//     return;
-// }
-
 let totalDays = 1;
 
 for (let month = m1; month < m2; month++) {
@@ -23,15 +15,14 @@ totalDays -= d1;
 totalDays += d2;
 
 function f(n) {
-    if(DAYS[n] === day) {
-        return true}
+    if(DAYS[n] === day) return true
     else if(n % 7 === n) return false
     else return f(n % 7)
 }
 
 let cnt = 0;
 for(let i = totalDays; 0 < i; i--) {
-    if(f(i)) {
+    if(f(i - 1)) {
         cnt++;
     }
 }
