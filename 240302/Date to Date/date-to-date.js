@@ -10,5 +10,5 @@ for(let i = m1; i <= m2; i++) {
     daySum += NUM_OF_DAYS[i];
 }
 
-daySum = daySum - NUM_OF_DAYS[m1] + (d1 + NUM_OF_DAYS[m2] - d2) + 1;
+daySum = daySum - NUM_OF_DAYS[m1] + (m1 !== m2 ? (d1 + NUM_OF_DAYS[m2] - d2) : 0) + 1;
 console.log(daySum)
