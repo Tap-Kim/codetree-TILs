@@ -10,28 +10,12 @@ if (m1 === m2) {
     return;
 }
 
-let totalDays = NUM_OF_DAYS[m1 - 1] - d1;
+let totalDays = NUM_OF_DAYS[m1 - 1] - d1 + 1;
 
-for (let month = m1; month < m2 - 1; month++) {
+for (let month = m1; month <= m2 - 1; month++) {
     totalDays += NUM_OF_DAYS[month];
 }
 
 totalDays += d2;
 
 console.log(totalDays)
-
-
-// let daySum = 1;
-// if(d1 === d2 && m1 === m2) {
-//     console.log(daySum)
-//     return;
-// }
-
-// for(let i = m1; i <= m2; i++) {
-//     daySum += NUM_OF_DAYS[i - 1];
-// }
-
-// daySum -= d1;
-// daySum += d2;
-
-// console.log(daySum)
