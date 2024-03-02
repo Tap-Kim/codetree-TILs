@@ -10,12 +10,12 @@ if (m1 === m2) {
     return;
 }
 
-let totalDays = NUM_OF_DAYS[m1 - 1] - d1 + 1;
+let totalDays = 1;
 
-for (let month = m1; month <= m2 - 1; month++) {
+for (let month = m1; month < m2; month++) {
     totalDays += NUM_OF_DAYS[month];
 }
-
+totalDays -= d1;
 totalDays += d2;
 
 console.log(totalDays)
