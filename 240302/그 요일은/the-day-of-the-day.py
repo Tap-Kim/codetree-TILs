@@ -9,7 +9,7 @@ def num_of_dates(m,d):
     for i range(1, m):
         total += dates[i]
 
-    return total += d
+    return total + d
 
 def num_of_day(s):
     return days[s]
