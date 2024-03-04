@@ -10,17 +10,15 @@ for(let i = 0; i < n; i++) {
     const x = Number(_x);
 
     if(dir === 'R') {
-        let initIndex = i === n - 1 ? startIndex - 1 : startIndex 
-        for(let j = initIndex; j < initIndex + x; j++) { 
-            line[j] = "R"
-            startIndex += 1;
+        for(let j = 0; j < x; j++) { 
+            line[startIndex + j] = 'R'
         }
+        startIndex += x -1;
     } else {
-        let initIndex = i === n - 1 ? startIndex + 1 : startIndex 
-        for(let j = initIndex ; j > initIndex - x; j--) { 
-            line[j] = "L"
-            startIndex -= 1;
+        for(let j = 0 ; j < x; j++) { 
+            line[startIndex - j] = 'L'
         }
+        startIndex -= x -1;
     }
 }
 
