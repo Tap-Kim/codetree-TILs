@@ -8,23 +8,19 @@ let startIndex = OFFSET;
 for(let i = 0; i < n; i++) {
     const [_x, dir] = inputs[i].trim().split(" ");
     const x = Number(_x);
-    let initIndex = i === n - 1 ? startIndex - 1 : startIndex 
-    // console.log("##", initIndex)
 
     if(dir === 'R') {
+        let initIndex = i === n - 1 ? startIndex - 1 : startIndex 
         for(let j = initIndex; j < initIndex + x; j++) { 
             line[j] = "R"
             startIndex += 1;
-            // console.log(j)
         }
-        // filterd()
     } else {
+        let initIndex = i === n - 1 ? startIndex + 1 : startIndex 
         for(let j = initIndex ; j > initIndex - x; j--) { 
             line[j] = "L"
             startIndex -= 1;
-            // console.log(j)
         }
-        // filterd()
     }
 }
 
