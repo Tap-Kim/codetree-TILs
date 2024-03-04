@@ -33,7 +33,7 @@ for(let i = 0; i < line.length; i++) {
     if(line[i] === 'R') rCnt++;
     else if(line[i] === 'L') lCnt++;
 }
-
+console.log(`${lCnt} ${rCnt}`)
 
 function filterd(){
     console.log(line.filter(_ => _ !== 0))
