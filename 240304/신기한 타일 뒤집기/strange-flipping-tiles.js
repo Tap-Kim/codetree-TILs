@@ -2,7 +2,7 @@ const OFFSET = 100000;
 const fs = require("fs");
 const [n, ...inputs] = fs.readFileSync(0).toString().trim().split("\n");
 
-const line = Array.from({length: OFFSET * OFFSET}).fill(0);
+const line = Array.from({length: OFFSET}).fill(0);
 
 let startIndex = OFFSET;
 for(let i = 0; i < n; i++) {
