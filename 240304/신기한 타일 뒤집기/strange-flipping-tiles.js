@@ -1,9 +1,3 @@
-// x L x R
-//   r r r r
-// l l l l l
-// r r r r r r r
-//       l l l l
-
 const OFFSET = 101;
 const fs = require("fs");
 const [n, ...inputs] = fs.readFileSync(0).toString().trim().split("\n");
@@ -14,16 +8,23 @@ let startIndex = OFFSET;
 for(let i = 0; i < n; i++) {
     const [_x, dir] = inputs[i].trim().split(" ");
     const x = Number(_x);
+    let initIndex = i === n - 1 ? startIndex - 1 : startIndex 
+    // console.log("##", initIndex)
+
     if(dir === 'R') {
-        for(let j = startIndex; j < startIndex + x; j++) { 
+        for(let j = initIndex; j < initIndex + x; j++) { 
             line[j] = "R"
+            startIndex += 1;
+            // console.log(j)
         }
-        startIndex += x - 1
+        // filterd()
     } else {
-        for(let j = startIndex ; j > startIndex - x; j--) { 
+        for(let j = initIndex ; j > initIndex - x; j--) { 
             line[j] = "L"
+            startIndex -= 1;
+            // console.log(j)
         }
-        startIndex -= x + 1
+        // filterd()
     }
 }
 
@@ -33,4 +34,7 @@ for(let i = 0; i < line.length; i++) {
     else if(line[i] === 'L') lCnt++;
 }
 
-console.log(`${lCnt} ${rCnt}`)
+
+function filterd(){
+    console.log(line.filter(_ => _ !== 0))
+}
