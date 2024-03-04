@@ -28,7 +28,3 @@ for(let i = 0; i < line.length; i++) {
     else if(line[i] === 'L') lCnt++;
 }
 console.log(`${lCnt} ${rCnt}`)
-
-function filterd(){
-    console.log(line.filter(_ => _ !== 0))
-}
