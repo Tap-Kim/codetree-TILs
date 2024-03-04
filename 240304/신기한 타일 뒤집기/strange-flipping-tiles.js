@@ -12,17 +12,20 @@ const line = Array.from({length: OFFSET * OFFSET}).fill(0);
 
 let startIndex = OFFSET;
 for(let i = 0; i < n; i++) {
-    const [x, dir] = inputs[i].trim().split(" ");
-    const _x = Number(x);
+    const [_x, dir] = inputs[i].trim().split(" ");
+    const x = Number(_x);
     if(dir === 'R') {
-        for(let j = startIndex + 1; j < startIndex + _x; j++) line[j] = "R"
-        startIndex += _x
+        for(let j = startIndex; j < startIndex + x; j++) { 
+            line[j] = "R"
+        }
+        startIndex += x - 1
     } else {
-        for(let j = startIndex ; j > startIndex - _x; j--) line[j] = "L"
-        startIndex -= _x
+        for(let j = startIndex ; j > startIndex - x; j--) { 
+            line[j] = "L"
+        }
+        startIndex -= x + 1
     }
 }
-// console.log(line.filter(_ => _ !== 0))
 
 let lCnt = 0, rCnt = 0;
 for(let i = 0; i < line.length; i++) {
