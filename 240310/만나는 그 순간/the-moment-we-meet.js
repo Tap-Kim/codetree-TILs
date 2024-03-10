@@ -33,3 +33,4 @@ for(let i = 1; i < time; i++) {
         return;
     }
 }
+console.log(-1)
