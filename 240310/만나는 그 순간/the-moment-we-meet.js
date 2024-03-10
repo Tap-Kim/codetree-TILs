@@ -26,9 +26,9 @@ for(let i = 0; i < m; i++) {
     }
     time += second;
 }
-
-for(let i = 1; i < time - 1; i++) {
-    if(nTimeLine[OFFESET + i] === mTimeLine[OFFESET + i]) {
+for(let i = 1; i < time; i++) {
+    if((nTimeLine[OFFESET + i] && mTimeLine[OFFESET + i]) 
+        && (nTimeLine[OFFESET + i] === mTimeLine[OFFESET + i])) {
         console.log(i);
         return;
     }
