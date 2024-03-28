@@ -10,7 +10,6 @@ for(let i = 0; i < n; i++) {
 
 // 시작 지점
 const [startX, startY] = rest.at(-1).trim().split(" ").map(Number);
-// const visited = Array.from({length: n}, () => Array(n).fill(false));
 
 const directions = [[-1, 0], [1, 0], [0, -1], [0, 1]];
 let x = startX - 1, y = startY - 1;
@@ -22,6 +21,11 @@ function canGo(_x, _y, max) {
         return false;
     }
     return true;
+}
+
+if(n === 1 && k >= 1) {
+    console.log(startX, startY)
+    return;
 }
 
 for(let i = 0; i < k; i++) {
@@ -46,7 +50,7 @@ for(let i = 0; i < k; i++) {
 console.log(x, y)
 
 
-
+// const visited = Array.from({length: n}, () => Array(n).fill(false));
 // visited[x][y] = true;
 // queue.push([x, y])
 
