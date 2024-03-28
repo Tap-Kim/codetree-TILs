@@ -14,10 +14,11 @@ const [startX, startY] = rest.at(-1).trim().split(" ").map(Number);
 const directions = [[-1, 0], [1, 0], [0, -1], [0, 1]];
 let x = startX - 1, y = startY - 1;
 let curr_v = matrix[x][y];
+const visited = Array.from({length: n}, () => Array(n).fill(false));
 
 function canGo(_x, _y, max) {
     if(_x < 0 || _y < 0 || _x >= n || _y >= n 
-    || matrix[_x][_y] >= curr_v || matrix[_x][_y] <= max ) { 
+    || matrix[_x][_y] >= curr_v || matrix[_x][_y] <= max || visited[_x][_y]) { 
         return false;
     }
     return true;
@@ -37,6 +38,7 @@ for(let i = 0; i < k; i++) {
             max = matrix[newX][newY];
             nextX = newX;
             nextY = newY;
+            visited[newX][newY] = true
         }
     }
 
