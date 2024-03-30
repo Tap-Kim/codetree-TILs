@@ -21,6 +21,16 @@ const rocks = grid.reduce((acc, row, i) => {
 
 let maxCount = 0;
 
+if(m === 0) {
+    const visited = new Set();
+    startPoints.forEach(([r,c]) => {
+        bfs(r - 1, c - 1, grid, visited);
+        maxCount = Math.max(maxCount, visited.size)
+    })
+    console.log(maxCount);
+    return;
+}
+
 // 조합 생성 및 각 조합에 대해 최대 방문 가능 칸 수 계산
 const combinations = getCombinations(rocks, m);
 combinations.forEach(combination => {
